@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Registration Form</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+
+<!-- Python goes here -->
+
+        <form action="/register" method="POST">
+            Email: <input type="text" name="email" style="display: block;" >
+            First Name: <input type="text" name="first_name" style="display: block"> 
+            Last Name: <input type="text" name="last_name" style="display: block"> 
+            Password: <input type="password" name="password" style="display: block;" >
+            Confirm Password: <input type="password" name="confirm_password" style="display: block"> 
+            
+            <input type="submit" value="Submit"> 
+        
+        </form>
+    
+    </div>  
+
+</body>
+</html>
